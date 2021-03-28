@@ -1,38 +1,57 @@
-.App {
+body {
+  position: relative;
+  min-height: 100vh;
+  color: rgba(0, 0, 0, 0.87);
+}
+#root {
+  min-height: inherit;
+}
+
+.container {
+  min-height: inherit;
+  padding: 15px;
+  background-image: url(./images/photo-1508614999368-9260051292e5.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.logo {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo-list {
+  list-style: none;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.delete-button:hover,
+.delete-button:focus .delete-icon {
+  color: #e00d0d;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.addTodos-placeholder {
+  font-size: 16px;
+  text-align: center;
+  padding: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.loader {
+  position: absolute !important;
+  width: 100vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.transition-list-enter {
+  transform: translateX(-100%);
+}
+.transition-list-enter-active {
+  transform: translateX(0);
+  transition: transform 250ms ease-in;
+}
+.transition-list-exit {
+  transform: translateX(0);
+}
+.transition-list-exit-active {
+  transform: translateX(-100%);
+  transition: transform 250ms ease-in;
 }
